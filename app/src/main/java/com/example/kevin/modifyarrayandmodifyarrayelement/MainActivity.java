@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView txtModifiedArrayElement;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -13,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView txtOriginalValuesOfArray = (TextView)findViewById(R.id.txtOriginalValuOfArray);
         TextView txtValueOfModifiedArray = (TextView)findViewById(R.id.txtValuesOfModifiedArray);
-        TextView txtModifiedArrayElement = (TextView)findViewById(R.id.txtModifiedArrayElement);
+        txtModifiedArrayElement = (TextView)findViewById(R.id.txtModifiedArrayElement);
         TextView txtOriginalArrayElement = (TextView) findViewById(R.id.txtOriginalArrayElement);
         TextView txtArrayElementAfterModification = (TextView)findViewById(R.id.txtArrayElementValueAfterModification);
 
@@ -43,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
         txtValueOfModifiedArray.setText(totalModifiedValues);
 
+        txtOriginalArrayElement.setText(stringArray[5]);
+
+        letsModifyElement(stringArray[5]);
+
+        txtArrayElementAfterModification.setText(stringArray[5]);
+
+
+
 
 
 
@@ -62,5 +72,11 @@ public class MainActivity extends AppCompatActivity {
             array[index] = "$" + array[index];
         }
 
+    }
+
+    public void letsModifyElement(String element) {
+
+        element = "@#" + element;
+        txtModifiedArrayElement.setText(element);
     }
 }
